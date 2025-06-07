@@ -5,7 +5,7 @@ import logoheader from '../assets/footer-image.svg';
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-slate-900 to-black text-white relative overflow-hidden">
+    <footer className="bg-[#081A38] text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-20 w-64 h-64 bg-blue-500 rounded-full blur-3xl"></div>

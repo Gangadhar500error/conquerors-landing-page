@@ -10,41 +10,14 @@ import {
 } from "lucide-react";
 import { Badge } from "../components/ui/badge";
 import logoheader from '../assets/footer-image.svg';
+import Navbar from "./Navbar";
 interface HeroProps {
   scrollToForm: () => void;
 }
 const Hero = ({ scrollToForm }: HeroProps) => {
   return (
     <section className="bg-gradient-to-br pb-20 from-gray-900 via-blue-900 to-purple-900 relative overflow-hidden text-white">
-      <nav className="relative z-50 p-6 ">
-        <div className="container mx-auto flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-              <img 
-        src={logoheader} 
-        alt="Logo" 
-        className="h-16 w-auto object-contain" 
-      />
-          </div>
-          <div className="hidden md:flex space-x-8 text-white">
-            <a href="#about" className="hover:text-blue-300 transition-all duration-300 relative group">
-              About
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a href="#services" className="hover:text-blue-300 transition-all duration-300 relative group">
-              Services
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a href="#portfolio" className="hover:text-blue-300 transition-all duration-300 relative group">
-              Portfolio
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a href="#contact" className="hover:text-blue-300 transition-all duration-300 relative group">
-              Contact
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
-            </a>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
       <div className="text-center">
         <p className="text-sm tracking-widest text-gray-300 uppercase">
           <Badge className="mt-4 mb-4 bg-gradient-to-r from-accent-500 to-purple-600 text-white px-6 py-2 text-sm font-semibold shadow-lg">
@@ -73,13 +46,15 @@ const Hero = ({ scrollToForm }: HeroProps) => {
       </div>
 
       <div className="flex flex-col sm:flex-row gap-6 justify-center my-10">
+        <a href="#contact">
         <Button
           size="lg"
-          onClick={scrollToForm}
+          
           className="bg-gradient-to-r from-accent-500 to-purple-600 hover:from-accent-600 hover:to-purple-700 text-white px-10 py-6 text-xl rounded-xl font-bold shadow-2xl hover:shadow-accent-500/25 transform hover:scale-105 transition-all duration-300"
         >
           Book a Free Consultation
         </Button>
+        </a>
         {/* <Button
               size="lg"
               variant="outline"

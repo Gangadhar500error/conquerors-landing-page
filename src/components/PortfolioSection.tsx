@@ -79,7 +79,7 @@ const Portfolio = () => {
   return (
     <>
       <SmoothScroll />
-      <div className="bg-white py-16">
+      <div id="portfolio" className="bg-white py-16">
         <section
           id="portfolio"
           className="bg-white  max-w-3xl-screen ml-auto"

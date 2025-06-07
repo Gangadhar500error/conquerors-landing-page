@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
@@ -20,40 +19,58 @@ import FloatingButtons from '../components/FloatingButtons';
 
 const Index = () => {
   const [showPopup, setShowPopup] = useState(false);
+  const [showBackToTop, setShowBackToTop] = useState(false);
 
+  // Show popup after 5 minutes
   useEffect(() => {
     const interval = setInterval(() => {
       setShowPopup(true);
-    }, 300000); // 5 minutes
-
+    }, 300000);
     return () => clearInterval(interval);
   }, []);
 
+  // Toggle Back to Top button on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 300);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Scroll to top function
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-r from-blue-900 to-purple-900">
-      <HeroSection scrollToForm={function (): void {
-        throw new Error('Function not implemented.');
-      } } />
+      <HeroSection scrollToForm={() => {}} />
       <AboutSection />
       <DevelopmentCompaniesSection />
       <ServicesSection />
       <TrustedCompaniesSection />
-       <CompanyCardsSection />
+      <CompanyCardsSection />
       {/* <WhyChooseUsSection /> */}
       <TechnologiesSection />
       <PortfolioSection />
       <ProcessSection />
       {/* <HowWeBuildSection /> */}
-      
-     
       {/* <SuccessStoriesSection /> */}
       <TestimonialsSection />
       <ContactSection />
       <Footer />
-      <FloatingButtons showBackToTop={false} scrollToTop={function (): void {
+
+      {/* ✅ Working Back to Top button */}
+      <FloatingButtons
+        showBackToTop={showBackToTop}
+        scrollToTop={scrollToTop}
+      />
+
+      <ContactPopup isOpen={false} onClose={function (): void {
         throw new Error('Function not implemented.');
       } } />
-      <ContactPopup  />
     </div>
   );
 };

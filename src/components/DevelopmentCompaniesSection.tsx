@@ -119,7 +119,7 @@ const DevelopmentCompaniesSection = () => {
   }, []);
 
   return (
-    <section className="py-24 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+    <section id="services" className="py-24 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row gap-16">
           {/* Left Sticky Title Section */}
@@ -209,9 +209,11 @@ const DevelopmentCompaniesSection = () => {
                   Ready to take the next step? Request additional services or start your next project with the
                   <span className="font-bold text-gray-900"> top development company in India</span> today.
                 </p>
+                 <a href="#contact">
                 <button className="mt-6 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold text-sm px-6 py-2 rounded-full transition duration-300">
                   GET IN TOUCH
                 </button>
+                </a>
               </div>
             </Card>
           </div>

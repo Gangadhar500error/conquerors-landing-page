@@ -51,11 +51,29 @@ const About = () => {
   ];
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden rounded-t-[40px]">
+    <section id="about" className="py-24 bg-white relative overflow-hidden rounded-t-[40px]">
 
       <div className="container mx-auto px-6 relative ">
+        <div className="grid md:grid-cols-4 gap-8 mb-20">
+          {stats.map((stat, index) => {
+            const IconComponent = stat.icon;
+            return (
+              <Card key={index} className="group bg-white/80 backdrop-blur-sm border shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                <CardContent className="p-8 text-center">
+                  <div className={`w-16 h-16 bg-gradient-to-br ${stat.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                    <IconComponent className="w-8 h-8 text-white" />
+                  </div>
+                  <div className="text-3xl font-bold mb-2 bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+                    {stat.number}
+                  </div>
+                  <div className="text-gray-600 font-medium">{stat.label}</div>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
         {/* Main About Section - Side by Side */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <div className="space-y-8">
             <div className="space-y-6">
@@ -81,10 +99,12 @@ const About = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
+               <a href="#contact">
               <Button className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-6 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 rounded-xl">
                 Start Your Project
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
+              </a>
               {/* <Button variant="outline" className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-6 text-lg font-semibold transition-all duration-300 rounded-xl">
                 View Portfolio
               </Button> */}
@@ -117,22 +137,27 @@ const About = () => {
             <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-r from-purple-400 to-pink-500 rounded-2xl opacity-20 blur-xl"></div>
           </div>
         </div>
-
+ {/* Stats Section */}
+        
         {/* Final CTA Section */}
-        <div className="text-center bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-12 text-white">
+        {/* <div className="text-center bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-12 text-white">
           <h3 className="text-3xl font-bold mb-4">Ready to Transform Your Business?</h3>
           <p className="text-xl mb-8 opacity-90">
             Let's discuss how we can bring your vision to life with cutting-edge technology
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+             <a href="#contact">
             <Button className="bg-white text-blue-600 hover:bg-gray-100 hover:text-blue-600 px-8 py-6 text-lg font-semibold transition-colors duration-300 shadow-lg rounded-xl">
               Get Free Consultation
             </Button>
+            </a>
+             <a href="#portfolio">
             <Button variant="outline" className="bg-white hover:text-blue-600 text-blue-600 hover:bg-gray-100 px-8 py-6 text-lg font-semibold transition-colors duration-300 shadow-lg rounded-xl">
               View Case Studies
             </Button>
+            </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

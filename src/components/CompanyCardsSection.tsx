@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { ChevronLeftCircle, ChevronRightCircle, XCircle } from 'lucide-react';
-import Sliderone from '../assets/Artboard 1.jpg';
-import Slidertwo from '../assets/Artboard 2.jpg';
-import Sliderthree from '../assets/Artboard 5.jpg';
-import Sliderfour from '../assets/Artboard 6.jpg';
+import Sliderone from '../assets/Artboard 1-min.jpg';
+import Slidertwo from '../assets/Artboard 2-min.jpg';
+import Sliderthree from '../assets/Artboard 5-min.jpg';
+import Sliderfour from '../assets/Artboard 6-min.jpg';
 
 const slides = [Sliderone, Slidertwo, Sliderthree, Sliderfour];
 

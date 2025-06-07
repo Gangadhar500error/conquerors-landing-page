@@ -106,6 +106,7 @@ const config: Config = {
         "fade-in": "fade-in 0.6s ease-out",
         "slide-in-right": "slide-in-right 0.6s ease-out",
         "slide-in-left": "slide-in-left 0.6s ease-out",
+        "spin-slow-one": "spin 3s linear infinite",
         float: "float 3s ease-in-out infinite",
         gradient: "gradient 8s ease infinite",
         "pulse-slow": "pulse-slow 2s ease-in-out infinite",

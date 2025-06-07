@@ -94,9 +94,11 @@ const FAQsSection = () => {
               <p className="text-blue-100 mb-6">
                 Our team is here to help you with any additional questions about our services.
               </p>
-              <button className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition-colors">
+               <a href="#contact">
+              <button className="bg-white text-blue-600 px-8 py-3 rounded-xl font-semibold hover:bg-blue-50 transition-colors">
                 Contact Our Team
               </button>
+              </a>
             </div>
           </div>
         </div>
